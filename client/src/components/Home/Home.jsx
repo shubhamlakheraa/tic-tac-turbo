@@ -6,7 +6,7 @@ import {nanoid} from "nanoid"
 import myImage from "../../assets/tici.jpg"
 import "../../App.css"
 import "./Home.css"
-import Footer from "../Footer/footer"
+import Footer from "../Footer/Footer"
 
 export default function Home(){
 
