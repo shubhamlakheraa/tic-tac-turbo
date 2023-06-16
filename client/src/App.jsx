@@ -1,31 +1,36 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
-import InputName from './components/PlayerOne'
-import InputPlayer2 from "./components/PlayerTwo"
 import {BrowserRouter as Router,Routes, Route} from "react-router-dom"
-import Room from './components/Room'
-import HomePage from './pages/HomePage'
-import GamePage from './pages/gamePage'
+import { io } from "socket.io-client"
+import Home from './components/Home/Home'
+import CreateRoom from './components/CreateRoom/CreateRoom'
+import JoinRoom from './components/JoinRoom/JoinRoom'
+import Game from './components/Game/Game'
+import Footer from './components/Footer/footer'
+
+const API_URL = "http://localhost:8000"
+
+const socket = io(API_URL)
 
 function App() {
 
+  
 
   return (
     <>
-      <div>
-  
-        <Router>
-        <Routes>
-          <Route path='/' element={<HomePage />} />
-        <Route path="/api/generate-code" element={<Room />} />
-        <Route path="/play-game" element={<GamePage />} />
-        </Routes>
-        </Router>
-        
-        
-         
-        
-      </div>
+    
+
+    <Router>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='createRoom' element={<CreateRoom socket={socket} />} />
+        <Route path='joinRoom' element={<JoinRoom socket={socket} />} />
+        <Route path='game/:roomId' element={<Game socket={socket} />} />
+        <Route path='*' />
+      </Routes>
+    </Router>
+    {/* <Footer /> */}
+      
     </>
   );
 }

@@ -78,4 +78,10 @@ input{
   outline: none;
   text-align: center;
   font-size: 25px;
+  margin-top: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+input::placeholder{
+  color: #9DB2BF;
 }
