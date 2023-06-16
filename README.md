@@ -60,9 +60,9 @@ To install and run TicTacTurbo locally, follow these steps:
 3. Install the dependencies for the frontend:
    - `cd client`
    - `npm install`
-4
 
-. Install the dependencies for the backend:
+
+4. Install the dependencies for the backend:
    - `cd ../server`
    - `npm install`
 5. Start the frontend and backend servers respectively:
