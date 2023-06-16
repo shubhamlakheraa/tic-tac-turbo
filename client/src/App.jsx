@@ -8,7 +8,7 @@ import JoinRoom from './components/JoinRoom/JoinRoom'
 import Game from './components/Game/Game'
 import Footer from './components/Footer/footer'
 
-const API_URL = "http://localhost:8000"
+const API_URL = "https://tictacturbo.onrender.com"
 
 const socket = io(API_URL)
 
